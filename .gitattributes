@@ -1,0 +1,19 @@
+###############################################################################
+# Set default behavior to keep line endings as is.
+###############################################################################
+* -text
+
+*.wxs    -text
+*.conf   -text
+*.ps1    -text
+*.ps1x   -text
+*.ps1xml -text
+*.psd1   -text
+*.psm1   -text
+*.pssc   -text
+*.psrc   -text
+*.cdxml  -text
+
+*.jpg binary
+*.png binary
+*.gif binary

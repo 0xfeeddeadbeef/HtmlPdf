@@ -1,0 +1,48 @@
+﻿root = true
+
+[*.cs]
+charset = utf-8-bom
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+
+dotnet_sort_system_directives_first = true
+
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggestion
+dotnet_style_readonly_field = true:suggestion
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
+dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion
+dotnet_style_prefer_conditional_expression_over_return = true:suggestion
+
+# CA1303: Do not pass literals as localized parameters
+dotnet_diagnostic.CA1303.severity = none
+# IDE0003: Remove qualification
+dotnet_style_qualification_for_field = false:none
+# IDE0003: Remove qualification
+dotnet_style_qualification_for_property = false:none
+# IDE0003: Remove qualification
+dotnet_style_qualification_for_event = false:none
+# IDE0003: Remove qualification
+dotnet_style_qualification_for_method = false:none
+
+[*.json]
+charset = utf-8
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+
+[*.{xml,config,csproj,props,targets}]
+charset = utf-8-bom
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+
+[*.{ps1,psd1,psm1}]
+charset = utf-8-bom
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
