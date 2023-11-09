@@ -7,10 +7,9 @@
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <IncludeBuildOutput>true</IncludeBuildOutput>
         <IsPackable>true</IsPackable>
-        <Version>3.0.0</Version>
+        <Version>3.1.0</Version>
         <Nullable>enable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings>
-        <FileAlignment>4096</FileAlignment>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisLevel>latest-all</AnalysisLevel>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
