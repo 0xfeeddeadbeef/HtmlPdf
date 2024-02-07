@@ -59,7 +59,7 @@ public class OutPdfCommand : PSCmdlet
 
     protected override void ProcessRecord()
     {
-        if (this.Page is not null && this.Page.Length > 0)
+        if (this.Page is { Length: > 0 })
         {
             _pages.AddRange(this.Page);
         }
@@ -67,7 +67,7 @@ public class OutPdfCommand : PSCmdlet
 
     protected override void EndProcessing()
     {
-        if (_pages is not null && _pages.Count > 0)
+        if (_pages is { Count: > 0 })
         {
             string path = string.Equals(this.ParameterSetName, "Path", StringComparison.Ordinal)
                 ? this.SessionState.Path.GetUnresolvedProviderPathFromPSPath(this.Path!)
