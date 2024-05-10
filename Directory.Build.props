@@ -14,7 +14,6 @@
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <EnableTrimAnalyzer>false</EnableTrimAnalyzer>
         <IsTrimmable>false</IsTrimmable>
-        <FileAlignment>4096</FileAlignment>
         <DebugType>embedded</DebugType>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(TF_BUILD)' == 'True' or '$(GITHUB_ACTIONS)' == 'true' ">
