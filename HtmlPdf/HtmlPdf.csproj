@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup Label="General Properties">
-        <TargetFrameworks>net7.0;net462</TargetFrameworks>
+        <TargetFrameworks>net8.0;net462</TargetFrameworks>
         <LangVersion>latest</LangVersion>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <IncludeBuildOutput>true</IncludeBuildOutput>
         <IsPackable>true</IsPackable>
-        <Version>3.2.0</Version>
+        <Version>3.3.0</Version>
         <Nullable>enable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
