@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (C) 2023 George Chakhidze
+ * Copyright (C) 2024 George Chakhidze
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -21,11 +21,23 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using iText.Html2pdf;
+#if NET8_0_OR_GREATER
+using CompositeFormat = System.Text.CompositeFormat;
+#endif
 
 internal static class HtmlToPdfConversion
 {
+#if NET8_0_OR_GREATER
+    private static readonly CompositeFormat s_PageBreakTemplate = CompositeFormat.Parse(PageBreakTemplate);
+    private static readonly CompositeFormat s_PageTemplate = CompositeFormat.Parse(PageTemplate);
+#endif
+
     internal static string? ConvertToPdf(List<string> pages, string title, string pdfPath, bool dryRun = false)
     {
+#if NET8_0_OR_GREATER
+        ArgumentNullException.ThrowIfNull(pages);
+        ArgumentException.ThrowIfNullOrWhiteSpace(pdfPath);
+#else
         if (pages is null)
         {
             throw new ArgumentNullException(nameof(pages));
@@ -35,10 +47,12 @@ internal static class HtmlToPdfConversion
         {
             throw new ArgumentNullException(nameof(pdfPath));
         }
+#endif
 
         title ??= string.Empty;
 
-        StringBuilder html = StringBuilderCache.Acquire(capacity: 24 * 1024);
+        var culture = CultureInfo.InvariantCulture;
+        StringBuilder html = StringBuilderCache.Acquire(capacity: 16 * 1024);
         html.Append(HtmlTemplate);
 
         html.Replace("%%TITLE%%", title);
@@ -49,11 +63,19 @@ internal static class HtmlToPdfConversion
 
             if (i != pages.Count - 1)
             {
-                html.AppendFormat(CultureInfo.InvariantCulture, PageBreakTemplate, pageUrl);
+#if NET8_0_OR_GREATER
+                html.AppendFormat(culture, s_PageBreakTemplate, pageUrl);
+#else
+                html.AppendFormat(culture, PageBreakTemplate, pageUrl);
+#endif
             }
             else
             {
-                html.AppendFormat(CultureInfo.InvariantCulture, PageTemplate, pageUrl);
+#if NET8_0_OR_GREATER
+                html.AppendFormat(culture, s_PageTemplate, pageUrl);
+#else
+                html.AppendFormat(culture, PageTemplate, pageUrl);
+#endif
             }
         }
 
@@ -79,11 +101,11 @@ internal static class HtmlToPdfConversion
     private const string HtmlTemplate =
         """
         <!DOCTYPE html>
-        <html lang=""en"">
+        <html lang="en">
         <head>
-          <meta charset=""utf-8"" />
+          <meta charset="utf-8" />
           <title>%%TITLE%%</title>
-          <style type=""text/css"">
+          <style type="text/css">
             @page { margin: 0pt; }
             .a4page {
               object-fit: scale-down;
@@ -98,7 +120,7 @@ internal static class HtmlToPdfConversion
             }
           </style>
         </head>
-        <body style=""margin: 0; padding: 0;"">
+        <body style="margin: 0; padding: 0;">
 
         """;
     private const string HtmlFooter = "</body>\r\n</html>\r\n";

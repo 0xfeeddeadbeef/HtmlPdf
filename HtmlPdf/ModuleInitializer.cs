@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (C) 2023 George Chakhidze
+ * Copyright (C) 2024 George Chakhidze
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
