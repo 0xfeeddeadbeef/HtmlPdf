@@ -57,7 +57,7 @@ internal static class StringBuilderCache
                 if (capacity <= sb.Capacity)
                 {
                     t_cachedInstance = null;
-                    sb.Clear();
+                    _ = sb.Clear();
                     return sb;
                 }
             }

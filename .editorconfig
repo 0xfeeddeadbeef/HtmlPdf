@@ -25,6 +25,14 @@ dotnet_style_qualification_for_property = false:none
 dotnet_style_qualification_for_event = false:none
 # IDE0003: Remove qualification
 dotnet_style_qualification_for_method = false:none
+# Dont offer to convert to block scoped namespaces
+dotnet_diagnostic.IDE0160.severity = none
+# Dont offer to remove unnecessary suppressions
+dotnet_diagnostic.IDE0079.severity = none
+# Disable: Move usings outside of namespace declaration
+dotnet_diagnostic.IDE0065.severity = none
+# Disable: Use explicit type instead of var
+dotnet_diagnostic.IDE0008.severity = none
 
 [*.json]
 charset = utf-8

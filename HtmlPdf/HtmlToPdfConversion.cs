@@ -51,13 +51,13 @@ internal static class HtmlToPdfConversion
 
         title ??= string.Empty;
 
-        var culture = CultureInfo.InvariantCulture;
+        CultureInfo culture = CultureInfo.InvariantCulture;
         StringBuilder html = StringBuilderCache.Acquire(capacity: 16 * 1024);
         html.Append(HtmlTemplate);
 
         html.Replace("%%TITLE%%", title);
 
-        for (var i = 0; i < pages.Count; i++)
+        for (int i = 0; i < pages.Count; i++)
         {
             string pageUrl = new Uri(pages[i]).AbsoluteUri;
 
