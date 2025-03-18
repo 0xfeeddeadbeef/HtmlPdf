@@ -7,7 +7,7 @@
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <IncludeBuildOutput>true</IncludeBuildOutput>
         <IsPackable>true</IsPackable>
-        <Version>3.5.0</Version>
+        <Version>3.6.0</Version>
         <Nullable>enable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
@@ -15,8 +15,8 @@
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
         <Authors>george.chakhidze</Authors>
-        <Company>George Chakhidze</Company>
-        <Copyright>Copyright © 2024 George Chakhidze</Copyright>
+        <Company>Giorgi Chakhidze</Company>
+        <Copyright>Copyright &#169; 2025 Giorgi Chakhidze</Copyright>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/0xfeeddeadbeef/HtmlPdf</PackageProjectUrl>
@@ -31,27 +31,27 @@
     </ItemGroup>
 
     <ItemGroup Label="Common Packages">
-        <PackageReference Include="BouncyCastle.Cryptography" Version="2.4.0" />
-        <PackageReference Include="itext7" Version="9.0.0" />
-        <PackageReference Include="itext7.bouncy-castle-adapter" Version="9.0.0" />
-        <PackageReference Include="itext7.pdfhtml" Version="6.0.0" />
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />
+        <PackageReference Include="itext7" Version="9.1.0" />
+        <PackageReference Include="itext7.bouncy-castle-adapter" Version="9.1.0" />
+        <PackageReference Include="itext7.pdfhtml" Version="6.1.0" />
         <PackageReference Include="Meziantou.Analyzer" Version="2.*">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.*">
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="10.*">
             <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
-        <PackageReference Include="System.Management.Automation" Version="7.5.0-rc.1" />
-        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.0" />
+        <PackageReference Include="System.Management.Automation" Version="7.5.0" />
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.3" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-        <PackageReference Include="System.Management.Automation" Version="7.4.6" />
+        <PackageReference Include="System.Management.Automation" Version="7.4.7" />
         <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
     </ItemGroup>
 
