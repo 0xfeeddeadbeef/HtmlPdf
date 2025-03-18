@@ -1,14 +1,14 @@
-﻿<Project>
+<Project>
     <PropertyGroup>
         <LangVersion>latest</LangVersion>
         <RestoreUseStaticGraphEvaluation>true</RestoreUseStaticGraphEvaluation>
         <MinClientVersion>3.0</MinClientVersion>
         <MSBuildCopyContentTransitively>true</MSBuildCopyContentTransitively>
-        <Features>strict</Features>
+        <Features>$(Features);strict</Features>
         <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
         <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
         <Deterministic>false</Deterministic>
-        <Copyright>© Giorgi Chakhidze. All rights reserved.</Copyright>
+        <Copyright>&#169; Giorgi Chakhidze. All rights reserved.</Copyright>
         <Authors>george.chakhidze</Authors>
         <Company>Giorgi Chakhidze</Company>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
