@@ -29,7 +29,7 @@ using System;
 namespace HtmlPdf;
 
 /// <summary>
-///    Provides a cached reusable instance of <see cref="StringBuilder"/> per thread.
+///   Provides a cached reusable instance of <see cref="StringBuilder"/> per thread.
 /// </summary>
 internal static class StringBuilderCache
 {
@@ -40,10 +40,10 @@ internal static class StringBuilderCache
     private static StringBuilder? t_cachedInstance;
 
     /// <summary>
-    ///    Get a <see cref="StringBuilder"/> for the specified capacity.
+    ///   Get a <see cref="StringBuilder"/> for the specified capacity.
     /// </summary>
     /// <remarks>
-    ///    If a <see cref="StringBuilder"/> of an appropriate size is cached, it will be returned and the cache emptied.
+    ///   If a <see cref="StringBuilder"/> of an appropriate size is cached, it will be returned and the cache emptied.
     /// </remarks>
     public static StringBuilder Acquire(int capacity = DefaultCapacity)
     {
@@ -67,7 +67,7 @@ internal static class StringBuilderCache
     }
 
     /// <summary>
-    ///    Place the specified builder in the cache if it is not too big.
+    ///   Place the specified builder in the cache if it is not too big.
     /// </summary>
     public static void Release(StringBuilder sb)
     {
@@ -78,7 +78,7 @@ internal static class StringBuilderCache
     }
 
     /// <summary>
-    ///    ToString() the stringbuilder, Release it to the cache, and return the resulting string.
+    ///   ToString() the stringbuilder, Release it to the cache, and return the resulting string.
     /// </summary>
     public static string GetStringAndRelease(StringBuilder sb)
     {

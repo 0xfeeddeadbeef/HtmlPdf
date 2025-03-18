@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (C) 2024 George Chakhidze
+ * Copyright (C) 2025 George Chakhidze
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -20,10 +20,7 @@ namespace HtmlPdf;
 using System;
 using System.Collections.Generic;
 
-[Cmdlet(VerbsData.Out, "Pdf",
-    ConfirmImpact = ConfirmImpact.Low,
-    RemotingCapability = RemotingCapability.None,
-    SupportsShouldProcess = true)]
+[Cmdlet(VerbsData.Out, "Pdf", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.None, SupportsShouldProcess = true)]
 public sealed class OutPdfCommand : PSCmdlet
 {
     private readonly List<string> _pages = new(capacity: 16);

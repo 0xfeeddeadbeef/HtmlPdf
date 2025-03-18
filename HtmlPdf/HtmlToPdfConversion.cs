@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (C) 2024 George Chakhidze
+ * Copyright (C) 2025 George Chakhidze
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -21,20 +21,20 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using iText.Html2pdf;
-#if NET8_0_OR_GREATER
+#if NET
 using CompositeFormat = System.Text.CompositeFormat;
 #endif
 
 internal static class HtmlToPdfConversion
 {
-#if NET8_0_OR_GREATER
+#if NET
     private static readonly CompositeFormat s_PageBreakTemplate = CompositeFormat.Parse(PageBreakTemplate);
     private static readonly CompositeFormat s_PageTemplate = CompositeFormat.Parse(PageTemplate);
 #endif
 
     internal static string? ConvertToPdf(List<string> pages, string title, string pdfPath, bool dryRun = false)
     {
-#if NET8_0_OR_GREATER
+#if NET
         ArgumentNullException.ThrowIfNull(pages);
         ArgumentException.ThrowIfNullOrWhiteSpace(pdfPath);
 #else
@@ -63,7 +63,7 @@ internal static class HtmlToPdfConversion
 
             if (i != pages.Count - 1)
             {
-#if NET8_0_OR_GREATER
+#if NET
                 html.AppendFormat(culture, s_PageBreakTemplate, pageUrl);
 #else
                 html.AppendFormat(culture, PageBreakTemplate, pageUrl);
@@ -71,7 +71,7 @@ internal static class HtmlToPdfConversion
             }
             else
             {
-#if NET8_0_OR_GREATER
+#if NET
                 html.AppendFormat(culture, s_PageTemplate, pageUrl);
 #else
                 html.AppendFormat(culture, PageTemplate, pageUrl);
