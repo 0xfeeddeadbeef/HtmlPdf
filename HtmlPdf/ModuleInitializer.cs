@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (C) 2024 George Chakhidze
+ * Copyright (C) 2025 George Chakhidze
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -17,7 +17,7 @@
 
 #nullable disable
 
-#if NET462_OR_GREATER
+#if NETFRAMEWORK
 
 namespace HtmlPdf;
 
@@ -27,11 +27,10 @@ using System.IO;
 using System.Reflection;
 
 /// <summary>
-///    Load dependencies from module directory when running on .NET Framework.
+///   Load dependencies from module directory when running on .NET Framework.
 /// </summary>
 /// <remarks>
-///    Assembly binding redirect in DLLs does not work, and we cant modify powershell.exe.config,
-///    this is the only way.
+///   Assembly binding redirect in DLLs does not work, and we cant modify powershell.exe.config, this is the only way.
 /// </remarks>
 public sealed class ModuleInitializer : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 {
@@ -59,7 +58,6 @@ public sealed class ModuleInitializer : IModuleAssemblyInitializer, IModuleAssem
 
     private static readonly HashSet<string> s_localAssemblies = new(StringComparer.OrdinalIgnoreCase)
     {
-        "BOUNCYCASTLE.CRYPTO",
         "BOUNCYCASTLE.CRYPTOGRAPHY",
         "ITEXT.BARCODES",
         "ITEXT.BOUNCY-CASTLE-ADAPTER",
@@ -71,6 +69,7 @@ public sealed class ModuleInitializer : IModuleAssemblyInitializer, IModuleAssem
         "ITEXT.KERNEL",
         "ITEXT.LAYOUT",
         "ITEXT.PDFA",
+        "ITEXT.PDFUA",
         "ITEXT.SIGN",
         "ITEXT.STYLEDXMLPARSER",
         "ITEXT.SVG",
