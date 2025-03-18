@@ -6,7 +6,7 @@
     RootModule = 'HtmlPdf.dll'
 
     # Version number of this module.
-    ModuleVersion = '3.5.0'
+    ModuleVersion = '3.6.0'
 
     # ID used to uniquely identify this module
     GUID = '7405F222-3FEE-45AE-8E2E-1C2B41DDB827'
@@ -15,13 +15,13 @@
     CompatiblePSEditions = @('Core','Desktop')
 
     # Author of this module
-    Author = 'George Chakhidze'
+    Author = 'Giorgi Chakhidze'
 
     # Company or vendor of this module
-    CompanyName = 'George Chakhidze'
+    CompanyName = 'Giorgi Chakhidze'
 
     # Copyright statement for this module
-    Copyright = '(c) 2024 George Chakhidze. All rights reserved.'
+    Copyright = '(c) 2025 Giorgi Chakhidze. All rights reserved.'
 
     # Description of the functionality provided by this module
     Description = 'Module to bind a bunch of images into a PDF file'
