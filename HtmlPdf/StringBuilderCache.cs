@@ -78,7 +78,7 @@ internal static class StringBuilderCache
     }
 
     /// <summary>
-    ///   ToString() the stringbuilder, Release it to the cache, and return the resulting string.
+    ///   ToString() the <see cref="StringBuilder"/>, Release it to the cache, and return the resulting string.
     /// </summary>
     public static string GetStringAndRelease(StringBuilder sb)
     {
