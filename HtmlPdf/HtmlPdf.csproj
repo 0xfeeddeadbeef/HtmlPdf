@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup Label="General Properties">
-        <TargetFrameworks>net9.0;net8.0;net462</TargetFrameworks>
+        <TargetFrameworks>net9.0;net8.0;net472</TargetFrameworks>
         <LangVersion>latest</LangVersion>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <IncludeBuildOutput>true</IncludeBuildOutput>
         <IsPackable>true</IsPackable>
-        <Version>3.6.1</Version>
+        <Version>3.7.0</Version>
         <Nullable>enable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
@@ -32,9 +32,9 @@
 
     <ItemGroup Label="Common Packages">
         <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />
-        <PackageReference Include="itext7" Version="9.1.0" />
-        <PackageReference Include="itext7.bouncy-castle-adapter" Version="9.1.0" />
-        <PackageReference Include="itext7.pdfhtml" Version="6.1.0" />
+        <PackageReference Include="itext7" Version="9.2.0" />
+        <PackageReference Include="itext7.bouncy-castle-adapter" Version="9.2.0" />
+        <PackageReference Include="itext7.pdfhtml" Version="6.2.0" />
         <PackageReference Include="Meziantou.Analyzer" Version="2.*">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -46,18 +46,18 @@
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
-        <PackageReference Include="System.Management.Automation" Version="7.5.0" />
-        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.4" />
+        <PackageReference Include="System.Management.Automation" Version="7.5.1" />
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.5" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-        <PackageReference Include="System.Management.Automation" Version="7.4.7" />
+        <PackageReference Include="System.Management.Automation" Version="7.4.10" />
         <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
     </ItemGroup>
 
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
         <PackageReference Include="System.Buffers" Version="4.6.1" />
-        <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.4" />
+        <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.5" />
         <PackageReference Include="System.Memory" Version="4.6.3" />
         <PackageReference Include="System.Numerics.Vectors" Version="4.6.1" />
         <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
@@ -66,10 +66,10 @@
     </ItemGroup>
 
     <!-- Workaround for https://github.com/dotnet/roslyn-project-system/issues/1739 -->
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'net462' ">
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'net472' ">
         <AssemblySearchPaths>$(AssemblySearchPaths);{GAC}</AssemblySearchPaths>
     </PropertyGroup>
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
         <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     </ItemGroup>
 
