@@ -6,7 +6,7 @@
     RootModule = 'HtmlPdf.dll'
 
     # Version number of this module.
-    ModuleVersion = '3.6.1'
+    ModuleVersion = '3.7.0'
 
     # ID used to uniquely identify this module
     GUID = '7405F222-3FEE-45AE-8E2E-1C2B41DDB827'
@@ -30,9 +30,7 @@
     PowerShellVersion = '5.1'
 
     # Functions to export from this module (either specific ones as array @('name1','name2') or all '*')
-    FunctionsToExport = @(
-        'Out-Pdf'
-    )
+    FunctionsToExport = @('Out-Pdf')
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess.
     # This may also contain a PSData hashtable with additional module metadata used by PowerShell.
