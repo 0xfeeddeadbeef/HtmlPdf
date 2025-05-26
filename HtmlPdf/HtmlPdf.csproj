@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup Label="General Properties">
         <TargetFrameworks>net9.0;net8.0;net472</TargetFrameworks>
@@ -31,7 +31,7 @@
     </ItemGroup>
 
     <ItemGroup Label="Common Packages">
-        <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.1" />
         <PackageReference Include="itext7" Version="9.2.0" />
         <PackageReference Include="itext7.bouncy-castle-adapter" Version="9.2.0" />
         <PackageReference Include="itext7.pdfhtml" Version="6.2.0" />
