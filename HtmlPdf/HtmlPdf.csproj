@@ -7,7 +7,7 @@
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <IncludeBuildOutput>true</IncludeBuildOutput>
         <IsPackable>true</IsPackable>
-        <Version>3.7.1</Version>
+        <Version>3.8.0</Version>
         <Nullable>enable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
@@ -16,11 +16,11 @@
         <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
         <Authors>george.chakhidze</Authors>
         <Company>Giorgi Chakhidze</Company>
-        <Copyright>Copyright &#169; 2025 Giorgi Chakhidze</Copyright>
+        <Copyright>&#169; 2025 Giorgi Chakhidze</Copyright>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/0xfeeddeadbeef/HtmlPdf</PackageProjectUrl>
-        <NoWarn>$(NoWarn);CA1510;CA1863;MA0026</NoWarn>
+        <NoWarn>$(NoWarn);CA1510;CA1863;MA0015;MA0026;MA0048;MA0051</NoWarn>
     </PropertyGroup>
 
     <ItemGroup Label="Global Usings">
@@ -31,10 +31,10 @@
     </ItemGroup>
 
     <ItemGroup Label="Common Packages">
-        <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.1" />
-        <PackageReference Include="itext7" Version="9.2.0" />
-        <PackageReference Include="itext7.bouncy-castle-adapter" Version="9.2.0" />
-        <PackageReference Include="itext7.pdfhtml" Version="6.2.0" />
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
+        <PackageReference Include="itext" Version="9.3.0" />
+        <PackageReference Include="itext.bouncy-castle-adapter" Version="9.3.0" />
+        <PackageReference Include="itext.pdfhtml" Version="6.2.1" />
         <PackageReference Include="Meziantou.Analyzer" Version="2.*">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -46,18 +46,18 @@
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
-        <PackageReference Include="System.Management.Automation" Version="7.5.1" />
-        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.5" />
+        <PackageReference Include="System.Management.Automation" Version="7.5.3" />
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.9" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-        <PackageReference Include="System.Management.Automation" Version="7.4.10" />
+        <PackageReference Include="System.Management.Automation" Version="7.4.12" />
         <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
         <PackageReference Include="System.Buffers" Version="4.6.1" />
-        <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.5" />
+        <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.9" />
         <PackageReference Include="System.Memory" Version="4.6.3" />
         <PackageReference Include="System.Numerics.Vectors" Version="4.6.1" />
         <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />

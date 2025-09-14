@@ -6,7 +6,7 @@
     RootModule = 'HtmlPdf.dll'
 
     # Version number of this module.
-    ModuleVersion = '3.7.1'
+    ModuleVersion = '3.8.0'
 
     # ID used to uniquely identify this module
     GUID = '7405F222-3FEE-45AE-8E2E-1C2B41DDB827'
