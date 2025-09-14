@@ -32,7 +32,13 @@ internal static class HtmlToPdfConversion
     private static readonly CompositeFormat s_PageTemplate = CompositeFormat.Parse(PageTemplate);
 #endif
 
-    internal static string? ConvertToPdf(List<string> pages, string title, string pdfPath, bool dryRun = false)
+    internal static string? ConvertToPdf(
+        List<string> pages,
+        string title,
+        string pdfPath,
+        PageSize pageSize = PageSize.A4,
+        PageOrientation pageOrientation = PageOrientation.Portrait,
+        bool dryRun = false)
     {
 #if NET
         ArgumentNullException.ThrowIfNull(pages);
@@ -49,6 +55,28 @@ internal static class HtmlToPdfConversion
         }
 #endif
 
+#if NET
+        if (!Enum.IsDefined(pageSize))
+        {
+            throw new ArgumentOutOfRangeException(nameof(pageSize));
+        }
+
+        if (!Enum.IsDefined(pageOrientation))
+        {
+            throw new ArgumentOutOfRangeException(nameof(pageOrientation));
+        }
+#else
+        if (!Enum.IsDefined(typeof(PageSize), pageSize))
+        {
+            throw new ArgumentOutOfRangeException(nameof(pageSize));
+        }
+
+        if (!Enum.IsDefined(typeof(PageOrientation), pageOrientation))
+        {
+            throw new ArgumentOutOfRangeException(nameof(pageOrientation));
+        }
+#endif
+
         title ??= string.Empty;
 
         CultureInfo culture = CultureInfo.InvariantCulture;
@@ -56,6 +84,10 @@ internal static class HtmlToPdfConversion
         html.Append(HtmlTemplate);
 
         html.Replace("%%TITLE%%", title);
+#pragma warning disable CA1308  // STFU! Actually need lowercase here
+        html.Replace("%%SIZE%%", pageSize.ToString().ToLowerInvariant());
+        html.Replace("%%ORIENTATION%%", pageOrientation.ToString().ToLowerInvariant());
+#pragma warning restore CA1308
 
         for (int i = 0; i < pages.Count; i++)
         {
@@ -95,32 +127,39 @@ internal static class HtmlToPdfConversion
         return generatedHtml;
     }
 
-    // TODO: Implement portrait/landscape orientation switch
-    private const string PageTemplate = "  <img class=\"a4page\" src=\"{0}\" />\r\n";
-    private const string PageBreakTemplate = "  <img class=\"a4pagebreak\" src=\"{0}\" />\r\n";
+    private const string PageTemplate = "  <img class=\"apage\" src=\"{0}\"/>\r\n";
+    private const string PageBreakTemplate = "  <img class=\"apagebreak\" src=\"{0}\"/>\r\n";
     private const string HtmlTemplate =
         """
         <!DOCTYPE html>
         <html lang="en">
         <head>
-          <meta charset="utf-8" />
+          <meta charset="utf-8"/>
           <title>%%TITLE%%</title>
           <style type="text/css">
-            @page { margin: 0pt; }
-            .a4page {
-              object-fit: scale-down;
-              margin: 0; padding: 0;
-              width: 794px; height: 1122px;
+            @page {
+              size: %%SIZE%% %%ORIENTATION%%;
+              margin: 0pt;
             }
-            .a4pagebreak {
+            html, body {
+              margin: 0;
+              padding: 0;
+            }
+            img.apage,
+            img.apagebreak {
               object-fit: scale-down;
-              margin: 0; padding: 0;
-              width: 794px; height: 1122px;
+              margin: 0;
+              padding: 0;
+              width: 100%;
+              height: auto;
+              max-width: 100%;
+            }
+            img.apagebreak {
               page-break-before: always;
             }
           </style>
         </head>
-        <body style="margin: 0; padding: 0;">
+        <body>
 
         """;
     private const string HtmlFooter = "</body>\r\n</html>\r\n";
