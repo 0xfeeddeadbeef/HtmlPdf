@@ -2,12 +2,12 @@
 
     <PropertyGroup Label="General Properties">
         <TargetFrameworks>net10.0;net9.0;net8.0;net472</TargetFrameworks>
-        <LangVersion>13</LangVersion>
+        <LangVersion>14</LangVersion>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <IncludeBuildOutput>true</IncludeBuildOutput>
         <IsPackable>true</IsPackable>
-        <Version>3.10.0</Version>
+        <Version>3.11.0</Version>
         <Nullable>enable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
@@ -32,9 +32,9 @@
 
     <ItemGroup Label="Common Packages">
         <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
-        <PackageReference Include="itext" Version="9.4.0" />
-        <PackageReference Include="itext.bouncy-castle-adapter" Version="9.4.0" />
-        <PackageReference Include="itext.pdfhtml" Version="6.3.0" />
+        <PackageReference Include="itext" Version="9.5.0" />
+        <PackageReference Include="itext.bouncy-castle-adapter" Version="9.5.0" />
+        <PackageReference Include="itext.pdfhtml" Version="6.3.1" />
         <PackageReference Include="Meziantou.Analyzer" Version="2.*">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
