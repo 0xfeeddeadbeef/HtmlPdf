@@ -1,13 +1,13 @@
 <Project>
     <PropertyGroup>
-        <LangVersion>latest</LangVersion>
+        <LangVersion>latest-all</LangVersion>
         <RestoreUseStaticGraphEvaluation>true</RestoreUseStaticGraphEvaluation>
         <MinClientVersion>3.0</MinClientVersion>
         <MSBuildCopyContentTransitively>true</MSBuildCopyContentTransitively>
         <Features>$(Features);strict</Features>
         <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
         <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-        <Deterministic>false</Deterministic>
+        <Deterministic>true</Deterministic>
         <Copyright>&#169; Giorgi Chakhidze. All rights reserved.</Copyright>
         <Authors>george.chakhidze</Authors>
         <Company>Giorgi Chakhidze</Company>
@@ -15,8 +15,9 @@
         <EnableTrimAnalyzer>false</EnableTrimAnalyzer>
         <IsTrimmable>false</IsTrimmable>
         <DebugType>embedded</DebugType>
+        <MSBuildEnableWorkloadResolver>false</MSBuildEnableWorkloadResolver>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(TF_BUILD)' == 'True' or '$(GITHUB_ACTIONS)' == 'true' ">
+    <PropertyGroup Condition=" '$(GITHUB_ACTIONS)' == 'true' ">
         <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
         <Deterministic>true</Deterministic>
         <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>

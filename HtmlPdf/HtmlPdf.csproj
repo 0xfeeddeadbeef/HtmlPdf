@@ -7,16 +7,11 @@
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <IncludeBuildOutput>true</IncludeBuildOutput>
         <IsPackable>true</IsPackable>
-        <Version>3.11.1</Version>
+        <Version>3.11.2</Version>
         <Nullable>enable</Nullable>
         <ImplicitUsings>disable</ImplicitUsings>
-        <EnableNETAnalyzers>true</EnableNETAnalyzers>
-        <AnalysisLevel>latest-all</AnalysisLevel>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-        <Authors>george.chakhidze</Authors>
-        <Company>Giorgi Chakhidze</Company>
-        <Copyright>&#169; 2026 Giorgi Chakhidze</Copyright>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/0xfeeddeadbeef/HtmlPdf</PackageProjectUrl>
@@ -25,9 +20,9 @@
 
     <ItemGroup Label="Global Usings">
         <Using Include="System.Diagnostics.CodeAnalysis" />
+        <Using Include="System.Globalization.CultureInfo" Alias="CultureInfo" />
         <Using Include="System.Management.Automation" />
         <Using Include="System.Text.StringBuilder" Alias="StringBuilder" />
-        <Using Include="System.Globalization.CultureInfo" Alias="CultureInfo" />
     </ItemGroup>
 
     <ItemGroup Label="Common Packages">
@@ -35,7 +30,7 @@
         <PackageReference Include="itext" Version="9.5.0" />
         <PackageReference Include="itext.bouncy-castle-adapter" Version="9.5.0" />
         <PackageReference Include="itext.pdfhtml" Version="6.3.1" />
-        <PackageReference Include="Meziantou.Analyzer" Version="2.*">
+        <PackageReference Include="Meziantou.Analyzer" Version="3.*">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
@@ -46,28 +41,31 @@
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net10.0' ">
-        <PackageReference Include="System.Management.Automation" Version="[7.6.0-preview.5]" />
-        <PackageReference Include="System.Text.Encoding.CodePages" Version="10.0.2" />
+        <!-- Targeting the baseline 7.6.0 PowerShell package instead of patch version: -->
+        <PackageReference Include="System.Management.Automation" Version="[7.6.0-rc.1]" />
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="10.0.3" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
+        <!-- Targeting the baseline 7.5.0 PowerShell package instead of patch version: -->
         <PackageReference Include="System.Management.Automation" Version="[7.5.0]" />
-        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.12" />
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.13" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+        <!-- Targeting the baseline 7.4.0 PowerShell package instead of patch version: -->
         <PackageReference Include="System.Management.Automation" Version="[7.4.0]" />
         <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
         <PackageReference Include="System.Buffers" Version="4.6.1" />
-        <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="10.0.2" />
+        <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="10.0.3" />
         <PackageReference Include="System.Memory" Version="4.6.3" />
         <PackageReference Include="System.Numerics.Vectors" Version="4.6.1" />
         <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
         <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
-        <PackageReference Include="System.ValueTuple" Version="4.6.1" />
+        <PackageReference Include="System.ValueTuple" Version="4.6.2" />
     </ItemGroup>
 
     <!-- Workaround for https://github.com/dotnet/roslyn-project-system/issues/1739 -->
