@@ -1,3 +1,12 @@
 <Solution>
+  <Folder Name="/Meta/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="global.json" />
+    <File Path="License.txt" />
+    <File Path="nuget.config" />
+  </Folder>
   <Project Path="HtmlPdf/HtmlPdf.csproj" />
 </Solution>
