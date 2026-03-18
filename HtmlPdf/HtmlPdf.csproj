@@ -41,19 +41,19 @@
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net10.0' ">
-        <!-- Targeting the baseline 7.6.0 PowerShell package instead of patch version: -->
-        <PackageReference Include="System.Management.Automation" Version="[7.6.0-rc.1]" />
+        <!-- Targeting the baseline 7.6.0 PowerShell package instead of a patch version: -->
+        <PackageReference Include="System.Management.Automation" Version="[7.6.0]" />
         <PackageReference Include="System.Text.Encoding.CodePages" Version="10.0.5" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net9.0' ">
-        <!-- Targeting the baseline 7.5.0 PowerShell package instead of patch version: -->
+        <!-- Targeting the baseline 7.5.0 PowerShell package instead of a patch version: -->
         <PackageReference Include="System.Management.Automation" Version="[7.5.0]" />
         <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.14" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-        <!-- Targeting the baseline 7.4.0 PowerShell package instead of patch version: -->
+        <!-- Targeting the baseline 7.4.0 PowerShell package instead of a patch version: -->
         <PackageReference Include="System.Management.Automation" Version="[7.4.0]" />
         <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
     </ItemGroup>
