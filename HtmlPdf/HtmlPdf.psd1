@@ -6,7 +6,7 @@
     RootModule = 'HtmlPdf.dll'
 
     # Version number of this module.
-    ModuleVersion = '3.11.4'
+    ModuleVersion = '3.11.6'
 
     # ID used to uniquely identify this module
     GUID = '7405F222-3FEE-45AE-8E2E-1C2B41DDB827'
@@ -46,7 +46,7 @@
             ProjectUri = 'https://github.com/0xfeeddeadbeef/HtmlPdf'
 
             # A URL to an icon representing this module.
-            IconUri = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/195px-PDF_file_icon.svg.png'
+            IconUri = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/250px-PDF_file_icon.svg.png'
         }
     }
 }
