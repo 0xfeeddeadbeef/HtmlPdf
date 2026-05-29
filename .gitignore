@@ -421,3 +421,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# C# DevKit language server cache files
+*.lscache
+
