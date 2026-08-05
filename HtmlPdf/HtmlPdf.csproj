@@ -26,7 +26,7 @@
     </ItemGroup>
 
     <ItemGroup Label="Common Packages">
-        <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.7.0" />
         <PackageReference Include="itext" Version="9.7.0" />
         <PackageReference Include="itext.bouncy-castle-adapter" Version="9.7.0" />
         <PackageReference Include="itext.pdfhtml" Version="6.3.3" />
