@@ -56,8 +56,9 @@ public sealed class ModuleInitializer : IModuleAssemblyInitializer, IModuleAssem
             : null;
     }
 
-    private static readonly HashSet<string> s_localAssemblies = new(StringComparer.OrdinalIgnoreCase)
-    {
+    private static readonly HashSet<string> s_localAssemblies =
+    [
+        with(StringComparer.OrdinalIgnoreCase),
         "BOUNCYCASTLE.CRYPTOGRAPHY",
         "ITEXT.BARCODES",
         "ITEXT.BOUNCY-CASTLE-ADAPTER",
@@ -87,7 +88,7 @@ public sealed class ModuleInitializer : IModuleAssemblyInitializer, IModuleAssem
         "SYSTEM.NUMERICS.VECTORS",
         "SYSTEM.RUNTIME.COMPILERSERVICES.UNSAFE",
         "SYSTEM.THREADING.TASKS.EXTENSIONS",
-    };
+    ];
 }
 
 #endif
